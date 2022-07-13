@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <string.h>
 
 char * Trim(char * string);
@@ -8,11 +7,15 @@ char * Trim(char * string);
 int main(int argc, char * argv[]){
 
     if(argc != 2){
-        printf("Incorrect Usage: ./binary [int]");
+        printf("Incorrect Usage: ./binary [int]\n");
         exit(1);
     }
 
     int decimal = atoi(argv[1]);
+    if(decimal > 65535){
+        printf("Integer entered is too large.\n");
+        exit(1);
+    }
 
     char string[16] = "0000000000000000";
 
