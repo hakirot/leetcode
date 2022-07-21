@@ -1,3 +1,4 @@
+// Converts int as string passed into [main] and returns binary string representation
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
