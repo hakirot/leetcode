@@ -22,7 +22,7 @@ struct Node
 Node * List = NULL;
 
 void swap(char* x, char* y);
-void permute(char* a, int l, int r);
+void permute(char* s, int l, int r);
 
 void Insert(char* x);
 int Contains(char* x);
@@ -35,8 +35,8 @@ int main(int argc, char * argv[]){
     int n = strlen(str);
     permute(str, 0, n - 1);
     Print();
-    return 0;
 
+    return 0;
 }
 
 void swap(char * x, char * y){
@@ -48,20 +48,18 @@ void swap(char * x, char * y){
 
 /* Function to print permutations of string.
  * This function takes three parameters:
- * 1. String
- * 2. Starting index of the string
- * 3. Ending index of the string
+ * 1. String (s)
+ * 2. Starting index of the string (l)
+ * 3. Ending index of the string   (r)
  */
-void permute(char * a, int l, int r){
+void permute(char * s, int l, int r){
     if(l == r){
-        if(Contains(a) == 0){
-            Insert(a);
-        }
+        if(!Contains(s)) Insert(s);
     } else {
         for(int i = l; i <= r; i++){
-            swap((a + l), (a + i));
-            permute(a, l + 1, r);
-            swap((a + l), (a + i)); // backtrack
+            swap((s + l), (s + i));
+            permute(s, l + 1, r);
+            swap((s + l), (s + i)); // backtrack
         }
     }
 }
@@ -88,7 +86,9 @@ void Print(){
 }
 
 int Contains(char* x){
+
     Node * temp = List;
+
     while(temp != NULL){
         if(strcmp(temp->data, x) == 0){
             // Found
