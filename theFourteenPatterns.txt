@@ -1,0 +1,88 @@
+Leetcode problems can be boiled down to basic patterns that lead us to the fastest way to solve the problems
+
+1. Sliding Window
+        - Used when we want to perate on a specific window size of a linked list/array
+        - Window slides from the start to the end of the array
+        - Traverses one element at a time
+
+        - Basically checking the subsets of the subarray to solve a problem
+        - Only useful for contiguous data structures, like arrays/Linked Lists
+        - Sliding window probably won't work if related elements are not next to each other 
+
+        Example Problems:
+            - Max Sum
+            - Subarray of size K 
+            - Longest substring of size K with distinct characters
+            - String anagrams
+
+        Detailed Problem:
+
+            Given an array of integers arr and two integers k and threshold, return the number of 
+            sub-arrays of size k and average greater than or equal to threshold
+
+            Solution Pseudocode:
+
+                1. Find the sum of the first k ints
+                2. Add to counter if the average of sum over k is equal to or greater than the threshold
+                3. For the rest of the array
+                    a. Slide window up by one element
+                    b. Calculate the average of these k elements
+                    c. If the k element's average is greater than the threshold, add to the counter
+                4. Return counter
+
+                [Answer is in slidingWindow.cpp]
+
+2. Two Pointers or Iterators
+
+    - Two pointers iterate through a data structure at the same time
+    - Iterate until a certain condition is met
+    - Alternative to looping through structure twice
+    - Useful when searching pairs in a sorted array
+
+    - How to identify:
+        - Sorted array / linked list
+        - Need t find elements that fit a certain condition
+        - Set that we need to find is a pair/triplet/subarray
+
+    - An example problem is finding out if a sorted array contains two numbers that can find a target sum
+        - Left pointer will be the smaller number
+        - Right pointer will be the larger number
+
+    Example Problems:
+        - Squaring a sorted array
+        - Triplets that sum to zero
+        - Comparing strings that contain backspaces
+
+    Detailed Problem:
+
+        You are given an integer array height of length n. There are n vertical lines drawn such that the two 
+        endpoints of the ith line are (i, 0) and (i, height[i]).
+
+        Find two lines that together with the x-axis form a container, such that the container contains the 
+        most water. Return the maximum amount of water a container can store.
+
+        Two Pointers Pseudocode:
+            1. Start at the beginning and end of the array
+            2. While the two pointers don't intersect
+                a. Find the minimum height
+                b. Find the width
+                c. Find the area
+                d. If the area is larger than the current max, update it
+                e. Increment or decrement the pointer that has the smaller height
+
+
+3. Fast and Slow Pointers
+4. Merge intervals
+5. Cyclic Sort
+6. In-Place Reversal of Linked List
+7. Tree BFS
+8. Tree DFS
+9. Two Heaps
+10. Subsets
+11. Modified Binary Search
+12. Top K Elements
+13. K-Way Merge
+14. Topological Sort
+
+All of these patterns can prevent us from doing the Brute-Force solution
+Knowing what to look for will make Leetcode much easier
