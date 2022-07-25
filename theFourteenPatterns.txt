@@ -1,36 +1,37 @@
 Leetcode problems can be boiled down to basic patterns that lead us to the fastest way to solve the problems
 
 1. Sliding Window
-        - Used when we want to perate on a specific window size of a linked list/array
-        - Window slides from the start to the end of the array
-        - Traverses one element at a time
+    - Used when we want to perate on a specific window size of a linked list/array
+    - Window slides from the start to the end of the array
+    - Traverses one element at a time
 
+    How to identify:
         - Basically checking the subsets of the subarray to solve a problem
         - Only useful for contiguous data structures, like arrays/Linked Lists
         - Sliding window probably won't work if related elements are not next to each other 
 
-        Example Problems:
-            - Max Sum
-            - Subarray of size K 
-            - Longest substring of size K with distinct characters
-            - String anagrams
+    Example Problems:
+        - Max Sum of subarray of size 'k' (easy)
+        - Subarray of size K 
+        - Longest substring of size K with distinct characters
+        - String anagrams (hard)
 
-        Detailed Problem:
+    Detailed Problem:
 
-            Given an array of integers arr and two integers k and threshold, return the number of 
-            sub-arrays of size k and average greater than or equal to threshold
+        Given an array of integers arr and two integers k and threshold, return the number of 
+        sub-arrays of size k and average greater than or equal to threshold
 
-            Solution Pseudocode:
+        Solution Pseudocode:
 
-                1. Find the sum of the first k ints
-                2. Add to counter if the average of sum over k is equal to or greater than the threshold
-                3. For the rest of the array
-                    a. Slide window up by one element
-                    b. Calculate the average of these k elements
-                    c. If the k element's average is greater than the threshold, add to the counter
-                4. Return counter
+            1. Find the sum of the first k ints
+            2. Add to counter if the average of sum over k is equal to or greater than the threshold
+            3. For the rest of the array
+                a. Slide window up by one element
+                b. Calculate the average of these k elements
+                c. If the k element's average is greater than the threshold, add to the counter
+            4. Return counter
 
-                [Answer is in slidingWindow.cpp]
+            [Answer is in slidingWindow.cpp]
 
 2. Two Pointers or Iterators
 
@@ -39,9 +40,9 @@ Leetcode problems can be boiled down to basic patterns that lead us to the faste
     - Alternative to looping through structure twice
     - Useful when searching pairs in a sorted array
 
-    - How to identify:
-        - Sorted array / linked list
-        - Need t find elements that fit a certain condition
+    How to identify:
+        - Sorted array / linked list (usually)
+        - Need to find elements that fit a certain condition
         - Set that we need to find is a pair/triplet/subarray
 
     - An example problem is finding out if a sorted array contains two numbers that can find a target sum
@@ -49,9 +50,9 @@ Leetcode problems can be boiled down to basic patterns that lead us to the faste
         - Right pointer will be the larger number
 
     Example Problems:
-        - Squaring a sorted array
-        - Triplets that sum to zero
-        - Comparing strings that contain backspaces
+        - Squaring a sorted array (easy)
+        - Triplets that sum to zero (medium)
+        - Comparing strings that contain backspaces (medium)
 
     Detailed Problem:
 
@@ -72,7 +73,51 @@ Leetcode problems can be boiled down to basic patterns that lead us to the faste
 
 
 3. Fast and Slow Pointers
+
+    - Also known as Floyd's Cycle Detection Algorithm, or Hare and Tortoise Algorithm
+    - Very useful with cyclic linked list/arrays
+    - Two pointers that move at different speeds
+    - They will catch up to each other due to their nature
+
+    How to identify:
+        - The problem deals with a loop in a linked list or array
+        - When you need to know the position of a certain element or the overall length of the linked list
+
+        When should I use it over the two pointer method mentioned above?
+            - There are some cases where you shouldn't use the Two POinter approach such as in a singly 
+              linked list where you cannot move in a backwards direction. An example of when to use the
+              Fast and Slow pattern is when you are trying to determine if a linked list is a palindrome
+
+    Example Problems:
+        - Linked List Cycle (easy)
+        - Palindrome Linked List (medium)
+        - Cycle in a circular array (hard)
+
+
 4. Merge intervals
+
+    - The Merge Intervals pattern is an efficient technique to deal with overlapping intervals
+    - In such problems, you need to either fund overlapping intervals or merge intervals if they overlap
+
+    - There are six ways that two intervals ('a' and 'b') can overlap
+        - 'a' and 'b' do not overlap
+        - 'a' and 'b' overlap, 'b' ends after 'a'
+        - 'a' and 'b' overlap, 'a' ends after 'b'
+        - 'a' completely engulfs 'b'
+        - 'b' completely engulfs 'a'
+        - 'a' and 'b' do not overlap (but 'b' comes before 'a')
+
+    - Understanding and recognizing htese six cases will help you solve a wide range of problems from 
+      inserting intervals to optimizing interval merges
+
+    How to identify:
+        - You are asked to produce a list with only mutually exclusive intervals
+        - You see the term "overlapping intervals"
+
+    Example Problems:
+        - Intervals Intersection (medium)
+        - Maximum CPU Load (hard) 
+
 5. Cyclic Sort
 6. In-Place Reversal of Linked List
 7. Tree BFS
