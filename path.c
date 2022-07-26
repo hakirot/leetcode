@@ -59,7 +59,7 @@ void permute(char * s, int l, int r){
         for(int i = l; i <= r; i++){
             swap((s + l), (s + i));
             permute(s, l + 1, r);
-            swap((s + l), (s + i)); // backtrack
+            swap((s + l), (s + i)); // Swap back
         }
     }
 }

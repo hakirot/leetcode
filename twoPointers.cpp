@@ -37,8 +37,8 @@ class Solution {
 
     public:
         int maxArea(vector<int>& array){
-            // Start at the beginning and end of the array
 
+            // Start at the beginning and end of the array
             int index1 = 0;
             int index2 = array.size() - 1;
             int minHeight = 0;
