@@ -79,6 +79,7 @@ Knowing what to look for will make Leetcode much easier
                 d. If the area is larger than the current max, update it
                 e. Increment or decrement the pointer that has the smaller height
 
+        [Answer is in twoPointers.cpp]
 
 3. Fast and Slow Pointers
 
@@ -86,13 +87,14 @@ Knowing what to look for will make Leetcode much easier
     - Very useful with cyclic linked list/arrays
     - Two pointers that move at different speeds
     - They will catch up to each other due to their nature
+    - Can also be used to find the middle of a noncyclical linked list
 
     How to identify:
         - The problem deals with a loop in a linked list or array
         - When you need to know the position of a certain element or the overall length of the linked list
 
         When should I use it over the two pointer method mentioned above?
-            - There are some cases where you shouldn't use the Two POinter approach such as in a singly 
+            - There are some cases where you shouldn't use the Two Pointer approach such as in a singly 
               linked list where you cannot move in a backwards direction. An example of when to use the
               Fast and Slow pattern is when you are trying to determine if a linked list is a palindrome
 
@@ -115,7 +117,7 @@ Knowing what to look for will make Leetcode much easier
         - 'b' completely engulfs 'a'
         - 'a' and 'b' do not overlap (but 'b' comes before 'a')
 
-    - Understanding and recognizing htese six cases will help you solve a wide range of problems from 
+    - Understanding and recognizing these six cases will help you solve a wide range of problems from 
       inserting intervals to optimizing interval merges
 
     How to identify:

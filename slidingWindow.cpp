@@ -1,4 +1,8 @@
-/* Given an array of integers arr and two integers k and threshold, return the number of 
+
+/* 
+ * Fourteen Patterns #1
+ *
+ * Given an array of integers arr and two integers k and threshold, return the number of 
  * sub-arrays of size k with the average greater than or equal to threshold
  */
 #include <iostream>
@@ -55,7 +59,6 @@ int main(int argc, char * argv[]){
     vector<int> arr1 = {2, 2, 2, 2, 5, 5, 5, 8};
     int k1 = 3;
     int threshold1 = 4;
-
 
     vector<int> arr2 = {11, 13, 17, 23, 29, 31, 7, 5, 2, 3};
     int k2 = 3;
